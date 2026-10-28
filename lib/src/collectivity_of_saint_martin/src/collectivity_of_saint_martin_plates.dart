@@ -82,19 +82,34 @@ abstract final class CollectivityOfSaintMartinPlates {
       decals: const <PlateDecal>[
         PlateDecal(
           drawing: _logo,
-          box: PlateBox(_Layout.logoLeft, _Layout.logoTop, _Layout.logoWidth, _Layout.logoHeight),
+          box: PlateBox(
+            _Layout.logoLeft,
+            _Layout.logoTop,
+            _Layout.logoWidth,
+            _Layout.logoHeight,
+          ),
         ),
       ],
       slots: <PlateSlot>[
         PlateSlot(
           alphabet: CollectivityOfSaintMartinAlphabets.digits,
-          box: const PlateBox(_Layout.numberLeft, 0, _Layout.numberWidth, _Layout.height),
+          box: const PlateBox(
+            _Layout.numberLeft,
+            0,
+            _Layout.numberWidth,
+            _Layout.height,
+          ),
           length: 4,
           minLength: 3,
         ),
         PlateSlot(
           alphabet: CollectivityOfSaintMartinAlphabets.letters,
-          box: const PlateBox(_Layout.lettersLeft, 0, _Layout.lettersWidth, _Layout.height),
+          box: const PlateBox(
+            _Layout.lettersLeft,
+            0,
+            _Layout.lettersWidth,
+            _Layout.height,
+          ),
           length: 3,
           minLength: 2,
         ),
@@ -113,7 +128,12 @@ abstract final class CollectivityOfSaintMartinPlates {
         ),
         PlateLabel(
           text: 'Saint-Martin',
-          box: PlateBox(_Layout.logoLeft, _Layout.nameTop, _Layout.logoWidth, _Layout.nameHeight),
+          box: PlateBox(
+            _Layout.logoLeft,
+            _Layout.nameTop,
+            _Layout.logoWidth,
+            _Layout.nameHeight,
+          ),
           glyphHeight: _Layout.nameGlyph,
           color: CollectivityOfSaintMartinColors.logoGrey,
         ),

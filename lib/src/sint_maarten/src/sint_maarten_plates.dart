@@ -48,8 +48,18 @@ abstract final class SintMaartenPlates {
     panel: const PlatePanel(box: PlateBox(0, 0, 0, 0)),
     noPanel: true,
     slots: <PlateSlot>[
-      _field(SintMaartenAlphabets.letters, _Layout.prefix, length: 2, minLength: 1),
-      _field(SintMaartenAlphabets.digits, _Layout.number, length: 4, minLength: 1),
+      _field(
+        SintMaartenAlphabets.letters,
+        _Layout.prefix,
+        length: 2,
+        minLength: 1,
+      ),
+      _field(
+        SintMaartenAlphabets.digits,
+        _Layout.number,
+        length: 4,
+        minLength: 1,
+      ),
     ],
     labels: const <PlateLabel>[
       PlateLabel(

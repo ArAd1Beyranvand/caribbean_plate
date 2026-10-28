@@ -8,4 +8,5 @@ export 'src/collectivity_of_saint_martin_country.dart';
 export 'src/collectivity_of_saint_martin_themes.dart';
 export 'src/collectivity_of_saint_martin_plates.dart';
 export 'src/collectivity_of_saint_martin_validators.dart';
-export 'package:plate_alphabet/plate_alphabet.dart' show CollectivityOfSaintMartinAlphabets;
+export 'package:plate_alphabet/plate_alphabet.dart'
+    show CollectivityOfSaintMartinAlphabets;

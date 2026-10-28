@@ -56,8 +56,17 @@ abstract final class _Layout {
 abstract final class SabaIslandPlates {
   static final PlateSpec current = _spec(
     'sab.current',
-    prefix: _field(SabaIslandAlphabets.letters, _Layout.currentPrefix, length: 1),
-    number: _field(SabaIslandAlphabets.digits, _Layout.currentNumber, length: 4, minLength: 3),
+    prefix: _field(
+      SabaIslandAlphabets.letters,
+      _Layout.currentPrefix,
+      length: 1,
+    ),
+    number: _field(
+      SabaIslandAlphabets.digits,
+      _Layout.currentNumber,
+      length: 4,
+      minLength: 3,
+    ),
     bands: const <PlateBand>[
       PlateBand(
         box: _Layout.currentSticker,
@@ -67,19 +76,41 @@ abstract final class SabaIslandPlates {
       ),
     ],
     labels: const <PlateLabel>[
-      PlateLabel(text: 'SABA  THE UNSPOILED QUEEN', box: _Layout.currentCaption, glyphHeight: 16),
+      PlateLabel(
+        text: 'SABA  THE UNSPOILED QUEEN',
+        box: _Layout.currentCaption,
+        glyphHeight: 16,
+      ),
     ],
   );
 
   static final PlateSpec classic1978 = _spec(
     'sab.classic1978',
-    prefix: _field(SabaIslandAlphabets.letters, _Layout.classicPrefix, length: 1),
-    number: _field(SabaIslandAlphabets.digits, _Layout.classicNumber, length: 3, minLength: 1),
+    prefix: _field(
+      SabaIslandAlphabets.letters,
+      _Layout.classicPrefix,
+      length: 1,
+    ),
+    number: _field(
+      SabaIslandAlphabets.digits,
+      _Layout.classicNumber,
+      length: 3,
+      minLength: 1,
+    ),
     labels: const <PlateLabel>[
       PlateLabel(text: 'SABA NA', box: _Layout.classicCaption, glyphHeight: 56),
       PlateLabel(text: '-', box: _Layout.classicDash, glyphHeight: 134),
-      PlateLabel(text: 'UNSPOILED QUEEN', box: _Layout.classicFooter, glyphHeight: 46),
-      PlateLabel(text: '1\n9\n7\n8', box: _Layout.classicYear, glyphHeight: 36, lineHeight: 0.9),
+      PlateLabel(
+        text: 'UNSPOILED QUEEN',
+        box: _Layout.classicFooter,
+        glyphHeight: 46,
+      ),
+      PlateLabel(
+        text: '1\n9\n7\n8',
+        box: _Layout.classicYear,
+        glyphHeight: 36,
+        lineHeight: 0.9,
+      ),
     ],
   );
 

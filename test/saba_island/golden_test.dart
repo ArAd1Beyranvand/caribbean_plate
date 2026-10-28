@@ -27,14 +27,26 @@ void main() {
   /// per slot, i.e. per field — `'AB 1234'`, never `'A B 1 2 3 4'`)
   final Map<String, (PlateSpec, PlateTheme, String)> cases =
       <String, (PlateSpec, PlateTheme, String)>{
-        'current': (SabaIslandPlates.current, SabaIslandThemes.current, 'S 240'),
-        'classic1978': (SabaIslandPlates.classic1978, SabaIslandThemes.classic1978, 'S 163'),
+        'current': (
+          SabaIslandPlates.current,
+          SabaIslandThemes.current,
+          'S 240',
+        ),
+        'classic1978': (
+          SabaIslandPlates.classic1978,
+          SabaIslandThemes.classic1978,
+          'S 163',
+        ),
       };
 
-  for (final MapEntry<String, (PlateSpec, PlateTheme, String)> c in cases.entries) {
+  for (final MapEntry<String, (PlateSpec, PlateTheme, String)> c
+      in cases.entries) {
     testWidgets(c.key, (tester) async {
       final (PlateSpec spec, PlateTheme theme, String values) = c.value;
-      final PlateController controller = PlateController.fromValues(spec, values.split(' '));
+      final PlateController controller = PlateController.fromValues(
+        spec,
+        values.split(' '),
+      );
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -56,7 +68,10 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      await expectLater(find.byType(PlateView), matchesGoldenFile('goldens/sab_${c.key}.png'));
+      await expectLater(
+        find.byType(PlateView),
+        matchesGoldenFile('goldens/sab_${c.key}.png'),
+      );
       await tester.pumpWidget(const SizedBox.shrink());
       controller.dispose();
     });

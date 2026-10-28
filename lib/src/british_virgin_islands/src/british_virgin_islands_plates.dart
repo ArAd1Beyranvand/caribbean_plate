@@ -95,13 +95,23 @@ class _Design {
     slots: <PlateSlot>[
       PlateSlot(
         alphabet: BritishVirginIslandsAlphabets.letters,
-        box: PlateBox(prefixLeft, runCentre - runGlyph / 2, prefixWidth, runGlyph),
+        box: PlateBox(
+          prefixLeft,
+          runCentre - runGlyph / 2,
+          prefixWidth,
+          runGlyph,
+        ),
         length: prefixLength,
         minLength: prefixMinLength ?? prefixLength,
       ),
       PlateSlot(
         alphabet: BritishVirginIslandsAlphabets.digits,
-        box: PlateBox(digitsLeft, runCentre - runGlyph / 2, digitsWidth, runGlyph),
+        box: PlateBox(
+          digitsLeft,
+          runCentre - runGlyph / 2,
+          digitsWidth,
+          runGlyph,
+        ),
         length: digitsLength,
         minLength: digitsMinLength ?? digitsLength,
       ),

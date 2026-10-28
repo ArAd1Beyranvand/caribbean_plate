@@ -30,7 +30,9 @@ class SabaIslandValidator extends GatedPlateValidator {
       return const PlateValidation.invalid(reasonPrefix);
     }
     final String number = entry.group('number');
-    if (number.length < minDigits || number.length > maxDigits || !isDigits(number)) {
+    if (number.length < minDigits ||
+        number.length > maxDigits ||
+        !isDigits(number)) {
       return PlateValidation.invalid(reasonNumber);
     }
     return const PlateValidation.valid();

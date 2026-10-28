@@ -7,18 +7,21 @@ import 'cayman_islands_colors.dart';
 ///
 /// The rim is ~1.5 of the 71-unit reference height, 0.02 of the plate height.
 abstract final class CaymanIslandsThemes {
-  static PlateTheme _field({required Color field, required Color ink, required Color inactive}) =>
-      PlateTheme(
-        plateBackground: field,
-        plateBorder: CaymanIslandsColors.black,
-        ink: ink,
-        dividerColor: ink,
-        borderWidthRatio: 0.02,
-        plateRadiusRatio: 0.065,
-        activeColor: ink,
-        inactiveColor: inactive,
-        alertColor: const Color(0xFFD32F2F),
-      );
+  static PlateTheme _field({
+    required Color field,
+    required Color ink,
+    required Color inactive,
+  }) => PlateTheme(
+    plateBackground: field,
+    plateBorder: CaymanIslandsColors.black,
+    ink: ink,
+    dividerColor: ink,
+    borderWidthRatio: 0.02,
+    plateRadiusRatio: 0.065,
+    activeColor: ink,
+    inactiveColor: inactive,
+    alertColor: const Color(0xFFD32F2F),
+  );
 
   /// Black on yellow: private cars, both the 3+3 and the five-digit plate.
   static final PlateTheme private = _field(

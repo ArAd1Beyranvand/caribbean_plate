@@ -93,26 +93,49 @@ abstract final class TurksAndCaicosIslandsPlates {
   static final PlateSpec selfDrive = _prefixed(
     'tc.self_drive',
     labels: <PlateLabel>[
-      _label('S D', _Layout.sdCx, _Layout.sdCy, _Layout.sdWidth, _Layout.topBox, _Layout.sdGlyph),
+      _label(
+        'S D',
+        _Layout.sdCx,
+        _Layout.sdCy,
+        _Layout.sdWidth,
+        _Layout.topBox,
+        _Layout.sdGlyph,
+      ),
     ],
   );
 
   static List<PlateSpec> get all => <PlateSpec>[modern, prefixed, selfDrive];
 
-  static PlateSpec _prefixed(String id, {List<PlateLabel> labels = const <PlateLabel>[]}) {
+  static PlateSpec _prefixed(
+    String id, {
+    List<PlateLabel> labels = const <PlateLabel>[],
+  }) {
     final double boxTop = _Layout.prefCy - _Layout.prefBox / 2;
     return _spec(
       id,
       slots: <PlateSlot>[
         PlateSlot(
           alphabet: TurksAndCaicosIslandsAlphabets.letters,
-          box: PlateBox(_Layout.prefixLeft, boxTop, _Layout.prefixWidth, _Layout.prefBox),
+          box: PlateBox(
+            _Layout.prefixLeft,
+            boxTop,
+            _Layout.prefixWidth,
+            _Layout.prefBox,
+          ),
           length: 2,
-          spacing: max(0, _Layout.prefixWidth / 2 - 0.6 * 0.72 * _Layout.prefBox),
+          spacing: max(
+            0,
+            _Layout.prefixWidth / 2 - 0.6 * 0.72 * _Layout.prefBox,
+          ),
         ),
         PlateSlot(
           alphabet: TurksAndCaicosIslandsAlphabets.digits,
-          box: PlateBox(_Layout.serialLeft, boxTop, _Layout.serialWidth, _Layout.prefBox),
+          box: PlateBox(
+            _Layout.serialLeft,
+            boxTop,
+            _Layout.serialWidth,
+            _Layout.prefBox,
+          ),
           length: 5,
           minLength: 1,
         ),

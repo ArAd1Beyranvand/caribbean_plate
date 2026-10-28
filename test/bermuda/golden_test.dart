@@ -29,14 +29,22 @@ void main() {
       <String, (PlateSpec, PlateTheme, String)>{
         'private': (BermudaPlates.private, BermudaThemes.plate, '05293'),
         'prefixed': (BermudaPlates.prefixed, BermudaThemes.plate, 'CL 123'),
-        'prefixed_long': (BermudaPlates.prefixed, BermudaThemes.plate, 'RMC 0012'),
+        'prefixed_long': (
+          BermudaPlates.prefixed,
+          BermudaThemes.plate,
+          'RMC 0012',
+        ),
         'suffixed': (BermudaPlates.suffixed, BermudaThemes.plate, '123 Y'),
       };
 
-  for (final MapEntry<String, (PlateSpec, PlateTheme, String)> c in cases.entries) {
+  for (final MapEntry<String, (PlateSpec, PlateTheme, String)> c
+      in cases.entries) {
     testWidgets(c.key, (tester) async {
       final (PlateSpec spec, PlateTheme theme, String values) = c.value;
-      final PlateController controller = PlateController.fromValues(spec, values.split(' '));
+      final PlateController controller = PlateController.fromValues(
+        spec,
+        values.split(' '),
+      );
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -58,7 +66,10 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      await expectLater(find.byType(PlateView), matchesGoldenFile('goldens/bm_${c.key}.png'));
+      await expectLater(
+        find.byType(PlateView),
+        matchesGoldenFile('goldens/bm_${c.key}.png'),
+      );
       await tester.pumpWidget(const SizedBox.shrink());
       controller.dispose();
     });

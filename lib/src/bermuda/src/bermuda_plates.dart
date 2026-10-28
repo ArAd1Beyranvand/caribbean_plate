@@ -57,7 +57,12 @@ abstract final class BermudaPlates {
   static final PlateSpec private = _spec(
     'bm.private',
     slots: <PlateSlot>[
-      _slot(BermudaAlphabets.digits, _Layout.privateLeft, _Layout.privatePitch, 5),
+      _slot(
+        BermudaAlphabets.digits,
+        _Layout.privateLeft,
+        _Layout.privatePitch,
+        5,
+      ),
     ],
     groups: <String>['serial'],
   );
@@ -70,7 +75,13 @@ abstract final class BermudaPlates {
       'bm.prefixed',
       slots: <PlateSlot>[
         _variable(BermudaAlphabets.letters, left, p, 3, minLength: 1),
-        _variable(BermudaAlphabets.digits, left + 3 * p + _Layout.mixedGap, p, 4, minLength: 3),
+        _variable(
+          BermudaAlphabets.digits,
+          left + 3 * p + _Layout.mixedGap,
+          p,
+          4,
+          minLength: 3,
+        ),
       ],
       groups: <String>['letters', 'serial'],
     );
@@ -93,7 +104,12 @@ abstract final class BermudaPlates {
 
   /// A fixed run of [count] cells of [pitch]; spacing is what remains of the
   /// pitch after a glyph's ~0.6 em advance.
-  static PlateSlot _slot(PlateAlphabet alphabet, double left, double pitch, int count) => PlateSlot(
+  static PlateSlot _slot(
+    PlateAlphabet alphabet,
+    double left,
+    double pitch,
+    int count,
+  ) => PlateSlot(
     alphabet: alphabet,
     box: PlateBox(left, _Layout.slotTop, count * pitch, _Layout.slotHeight),
     length: count,
@@ -128,7 +144,8 @@ abstract final class BermudaPlates {
     noPanel: true,
     slots: slots,
     textGroups: <PlateTextGroup>[
-      for (int i = 0; i < groups.length; i++) PlateTextGroup(<int>[i], key: groups[i]),
+      for (int i = 0; i < groups.length; i++)
+        PlateTextGroup(<int>[i], key: groups[i]),
     ],
   );
 }

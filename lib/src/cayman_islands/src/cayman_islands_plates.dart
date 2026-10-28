@@ -91,17 +91,18 @@ abstract final class CaymanIslandsPlates {
     length: length,
   );
 
-  static PlateLabel _caption(double centreY, double glyph, {Color? color}) => PlateLabel(
-    text: 'CAYMAN ISLANDS',
-    box: PlateBox(
-      _Layout.centreX - _Layout.captionBoxWidth / 2,
-      centreY - _Layout.captionBoxHeight / 2,
-      _Layout.captionBoxWidth,
-      _Layout.captionBoxHeight,
-    ),
-    glyphHeight: glyph,
-    color: color,
-  );
+  static PlateLabel _caption(double centreY, double glyph, {Color? color}) =>
+      PlateLabel(
+        text: 'CAYMAN ISLANDS',
+        box: PlateBox(
+          _Layout.centreX - _Layout.captionBoxWidth / 2,
+          centreY - _Layout.captionBoxHeight / 2,
+          _Layout.captionBoxWidth,
+          _Layout.captionBoxHeight,
+        ),
+        glyphHeight: glyph,
+        color: color,
+      );
 
   static PlateSpec _spec(
     String id,
@@ -132,7 +133,9 @@ abstract final class CaymanIslandsPlates {
           3,
         ),
     ],
-    <PlateLabel>[_caption(_Layout.pairCaptionCentreY, _Layout.pairCaptionGlyph)],
+    <PlateLabel>[
+      _caption(_Layout.pairCaptionCentreY, _Layout.pairCaptionGlyph),
+    ],
     _pairGroups,
   );
 
@@ -151,7 +154,12 @@ abstract final class CaymanIslandsPlates {
     <PlateLabel>[
       PlateLabel(
         text: 'TAXI',
-        box: PlateBox(_Layout.centreX - 50, _Layout.taxiMarkCentreY - 12, 100, 24),
+        box: PlateBox(
+          _Layout.centreX - 50,
+          _Layout.taxiMarkCentreY - 12,
+          100,
+          24,
+        ),
         glyphHeight: _Layout.taxiMarkGlyph,
       ),
       // The label's colour is meant for bands; here it is the one blue ink.
@@ -175,7 +183,9 @@ abstract final class CaymanIslandsPlates {
         5,
       ),
     ],
-    <PlateLabel>[_caption(_Layout.singleCaptionCentreY, _Layout.singleCaptionGlyph)],
+    <PlateLabel>[
+      _caption(_Layout.singleCaptionCentreY, _Layout.singleCaptionGlyph),
+    ],
     const <PlateTextGroup>[
       PlateTextGroup(<int>[0], key: 'serial'),
     ],

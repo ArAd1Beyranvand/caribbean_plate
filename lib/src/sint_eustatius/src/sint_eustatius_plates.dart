@@ -55,21 +55,51 @@ abstract final class _Layout {
 abstract final class SintEustatiusPlates {
   static final PlateSpec statia = _spec(
     'bq.sint_eustatius.statia',
-    prefix: _field(SintEustatiusAlphabets.letters, _Layout.statiaPrefix, length: 1),
-    number: _field(SintEustatiusAlphabets.digits, _Layout.statiaNumber, length: 4, minLength: 1),
+    prefix: _field(
+      SintEustatiusAlphabets.letters,
+      _Layout.statiaPrefix,
+      length: 1,
+    ),
+    number: _field(
+      SintEustatiusAlphabets.digits,
+      _Layout.statiaNumber,
+      length: 4,
+      minLength: 1,
+    ),
     labels: const <PlateLabel>[
-      PlateLabel(text: 'ST. EUSTATIUS', box: _Layout.statiaCaption, glyphHeight: 38),
-      PlateLabel(text: 'THE HISTORIC GEM', box: _Layout.statiaFooter, glyphHeight: 18),
+      PlateLabel(
+        text: 'ST. EUSTATIUS',
+        box: _Layout.statiaCaption,
+        glyphHeight: 38,
+      ),
+      PlateLabel(
+        text: 'THE HISTORIC GEM',
+        box: _Layout.statiaFooter,
+        glyphHeight: 18,
+      ),
     ],
   );
 
   static final PlateSpec bicentennial = _spec(
     'bq.sint_eustatius.bicentennial',
-    prefix: _field(SintEustatiusAlphabets.letters, _Layout.serialPrefix, length: 1),
-    number: _field(SintEustatiusAlphabets.digits, _Layout.serialNumber, length: 3, minLength: 1),
+    prefix: _field(
+      SintEustatiusAlphabets.letters,
+      _Layout.serialPrefix,
+      length: 1,
+    ),
+    number: _field(
+      SintEustatiusAlphabets.digits,
+      _Layout.serialNumber,
+      length: 3,
+      minLength: 1,
+    ),
     labels: <PlateLabel>[
       const PlateLabel(text: "'76", box: _Layout.year, glyphHeight: 100),
-      const PlateLabel(text: 'THE GOLDEN ROCK', box: _Layout.slogan, glyphHeight: 24),
+      const PlateLabel(
+        text: 'THE GOLDEN ROCK',
+        box: _Layout.slogan,
+        glyphHeight: 24,
+      ),
       PlateLabel(
         text: 'ST. EUSTATIUS N.A.'.split('').join('\n'),
         box: _Layout.island,

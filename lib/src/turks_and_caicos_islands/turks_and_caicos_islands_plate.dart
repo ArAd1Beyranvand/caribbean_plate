@@ -9,4 +9,5 @@ export 'src/turks_and_caicos_islands_themes.dart';
 export 'src/turks_and_caicos_islands_plates.dart';
 export 'src/turks_and_caicos_islands_serial_generator.dart';
 export 'src/turks_and_caicos_islands_validators.dart';
-export 'package:plate_alphabet/plate_alphabet.dart' show TurksAndCaicosIslandsAlphabets;
+export 'package:plate_alphabet/plate_alphabet.dart'
+    show TurksAndCaicosIslandsAlphabets;

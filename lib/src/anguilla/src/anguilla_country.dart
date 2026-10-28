@@ -16,6 +16,9 @@ abstract final class AnguillaCountry {
     panelColor: AnguillaColors.sky,
     panelTextColor: AnguillaColors.black,
     flagAspectRatio: 2,
-    flag: SvgPlateAsset('assets/anguilla/flags/Flag_of_Anguilla.svg', package: 'caribbean_plate'),
+    flag: SvgPlateAsset(
+      'assets/anguilla/flags/Flag_of_Anguilla.svg',
+      package: 'caribbean_plate',
+    ),
   );
 }

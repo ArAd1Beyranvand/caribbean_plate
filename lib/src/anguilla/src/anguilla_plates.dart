@@ -80,11 +80,21 @@ abstract final class AnguillaPlates {
     slots: <PlateSlot>[
       PlateSlot(
         alphabet: AnguillaAlphabets.letters,
-        box: PlateBox(_Layout.letterLeft, _Layout.rowTop, _Layout.letterWidth, _Layout.glyphHeight),
+        box: PlateBox(
+          _Layout.letterLeft,
+          _Layout.rowTop,
+          _Layout.letterWidth,
+          _Layout.glyphHeight,
+        ),
       ),
       PlateSlot(
         alphabet: AnguillaAlphabets.digits,
-        box: PlateBox(_Layout.digitsLeft, _Layout.rowTop, _Layout.digitsWidth, _Layout.glyphHeight),
+        box: PlateBox(
+          _Layout.digitsLeft,
+          _Layout.rowTop,
+          _Layout.digitsWidth,
+          _Layout.glyphHeight,
+        ),
         length: 4,
         minLength: 1,
       ),

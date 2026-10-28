@@ -79,7 +79,12 @@ abstract final class BonairePlates {
     'bq.bonaire',
     prefix: _field(
       BonaireAlphabets.letters,
-      PlateBox(_Layout.whitePrefixCx - 57, _Layout.rowCy - _Layout.rowBox / 2, 114, _Layout.rowBox),
+      PlateBox(
+        _Layout.whitePrefixCx - 57,
+        _Layout.rowCy - _Layout.rowBox / 2,
+        114,
+        _Layout.rowBox,
+      ),
       length: 2,
       minLength: 1,
     ),
@@ -96,10 +101,17 @@ abstract final class BonairePlates {
     ),
     background: const PlateSection.rows(<PlatePart>[
       PlatePart(PlateSection.plain, end: _Layout.whiteSplit),
-      PlatePart(PlateSection.fill(PlateFill.color(BonaireColors.sky)), end: _Layout.whiteSeaTop),
+      PlatePart(
+        PlateSection.fill(PlateFill.color(BonaireColors.sky)),
+        end: _Layout.whiteSeaTop,
+      ),
       PlatePart(PlateSection.fill(PlateFill.color(BonaireColors.sea))),
     ]),
-    bands: _sticker(_Layout.whiteSticker, BonaireColors.black, BonaireColors.white),
+    bands: _sticker(
+      _Layout.whiteSticker,
+      BonaireColors.black,
+      BonaireColors.white,
+    ),
     labels: <PlateLabel>[
       _dash(_Layout.whiteDashCx),
       const PlateLabel(
@@ -121,7 +133,12 @@ abstract final class BonairePlates {
     'bq.blue',
     prefix: _field(
       BonaireAlphabets.letters,
-      PlateBox(_Layout.bluePrefixCx - 64, _Layout.rowCy - _Layout.rowBox / 2, 128, _Layout.rowBox),
+      PlateBox(
+        _Layout.bluePrefixCx - 64,
+        _Layout.rowCy - _Layout.rowBox / 2,
+        128,
+        _Layout.rowBox,
+      ),
       length: 2,
       minLength: 1,
     ),
@@ -146,25 +163,51 @@ abstract final class BonairePlates {
     ],
     labels: <PlateLabel>[
       _dash(_Layout.blueDashCx),
-      const PlateLabel(text: 'BONAIRE, N.A.', box: _Layout.blueCaption, glyphHeight: 40),
-      const PlateLabel(text: "DIVER'S PARADISE", box: _Layout.blueFooter, glyphHeight: 34),
+      const PlateLabel(
+        text: 'BONAIRE, N.A.',
+        box: _Layout.blueCaption,
+        glyphHeight: 40,
+      ),
+      const PlateLabel(
+        text: "DIVER'S PARADISE",
+        box: _Layout.blueFooter,
+        glyphHeight: 34,
+      ),
     ],
   );
 
   static final PlateSpec statia = _spec(
     'bq.statia',
     prefix: _field(BonaireAlphabets.letters, _Layout.statiaPrefix, length: 1),
-    number: _field(BonaireAlphabets.digits, _Layout.statiaNumber, length: 4, minLength: 1),
+    number: _field(
+      BonaireAlphabets.digits,
+      _Layout.statiaNumber,
+      length: 4,
+      minLength: 1,
+    ),
     labels: const <PlateLabel>[
-      PlateLabel(text: 'ST. EUSTATIUS', box: _Layout.statiaCaption, glyphHeight: 38),
-      PlateLabel(text: 'THE HISTORIC GEM', box: _Layout.statiaFooter, glyphHeight: 18),
+      PlateLabel(
+        text: 'ST. EUSTATIUS',
+        box: _Layout.statiaCaption,
+        glyphHeight: 38,
+      ),
+      PlateLabel(
+        text: 'THE HISTORIC GEM',
+        box: _Layout.statiaFooter,
+        glyphHeight: 18,
+      ),
     ],
   );
 
   static final PlateSpec saba = _spec(
     'bq.saba',
     prefix: _field(BonaireAlphabets.letters, _Layout.sabaPrefix, length: 1),
-    number: _field(BonaireAlphabets.digits, _Layout.sabaNumber, length: 4, minLength: 3),
+    number: _field(
+      BonaireAlphabets.digits,
+      _Layout.sabaNumber,
+      length: 4,
+      minLength: 3,
+    ),
     bands: const <PlateBand>[
       PlateBand(
         box: _Layout.sabaSticker,
@@ -174,7 +217,11 @@ abstract final class BonairePlates {
       ),
     ],
     labels: const <PlateLabel>[
-      PlateLabel(text: 'SABA  THE UNSPOILED QUEEN', box: _Layout.sabaCaption, glyphHeight: 16),
+      PlateLabel(
+        text: 'SABA  THE UNSPOILED QUEEN',
+        box: _Layout.sabaCaption,
+        glyphHeight: 16,
+      ),
     ],
   );
 
@@ -197,7 +244,11 @@ abstract final class BonairePlates {
 
   /// The sticker window: a rim with the field colour inset 5 units. It
   /// floats clear of the plate edge.
-  static List<PlateBand> _sticker(PlateBox box, Color rim, Color fill) => <PlateBand>[
+  static List<PlateBand> _sticker(
+    PlateBox box,
+    Color rim,
+    Color fill,
+  ) => <PlateBand>[
     PlateBand(box: box, color: rim, topCornerRadius: 8, bottomCornerRadius: 8),
     PlateBand(
       box: PlateBox(box.left + 5, box.top + 5, box.width - 10, box.height - 10),
@@ -209,7 +260,12 @@ abstract final class BonairePlates {
 
   static PlateLabel _dash(double cx) => PlateLabel(
     text: '-',
-    box: PlateBox(cx - 20, _Layout.rowCy - _Layout.rowBox / 2, 40, _Layout.rowBox),
+    box: PlateBox(
+      cx - 20,
+      _Layout.rowCy - _Layout.rowBox / 2,
+      40,
+      _Layout.rowBox,
+    ),
     glyphHeight: _Layout.rowBox,
   );
 

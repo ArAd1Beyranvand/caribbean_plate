@@ -18,7 +18,10 @@ class AnguillaValidator extends GatedPlateValidator {
   PlateValidation judge(PlateEntry entry) =>
       validateFields(type: entry.group('type'), serial: entry.group('serial'));
 
-  static PlateValidation validateFields({required String type, required String serial}) {
+  static PlateValidation validateFields({
+    required String type,
+    required String serial,
+  }) {
     if (!RegExp(r'^[A-Z]$').hasMatch(type)) {
       return const PlateValidation.invalid(reasonType);
     }

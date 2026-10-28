@@ -11,4 +11,5 @@ export 'src/british_virgin_islands_plates.dart';
 export 'src/british_virgin_islands_serial_generator.dart';
 export 'src/british_virgin_islands_themes.dart';
 export 'src/british_virgin_islands_validators.dart';
-export 'package:plate_alphabet/plate_alphabet.dart' show BritishVirginIslandsAlphabets;
+export 'package:plate_alphabet/plate_alphabet.dart'
+    show BritishVirginIslandsAlphabets;

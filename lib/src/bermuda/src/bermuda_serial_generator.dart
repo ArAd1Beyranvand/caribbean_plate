@@ -13,7 +13,9 @@ abstract final class BermudaSerialGenerator {
           slot.minLength + rnd.nextInt(slot.length - slot.minLength + 1),
           (_) => slot.alphabet.characters.isEmpty
               ? ''
-              : slot.alphabet.characters[rnd.nextInt(slot.alphabet.characters.length)],
+              : slot.alphabet.characters[rnd.nextInt(
+                  slot.alphabet.characters.length,
+                )],
         ).join(),
     ];
   }

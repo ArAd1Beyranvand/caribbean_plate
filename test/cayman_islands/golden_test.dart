@@ -27,18 +27,38 @@ void main() {
   /// per slot, i.e. per field — `'AB 1234'`, never `'A B 1 2 3 4'`)
   final Map<String, (PlateSpec, PlateTheme, String)> cases =
       <String, (PlateSpec, PlateTheme, String)>{
-        'private': (CaymanIslandsPlates.pair, CaymanIslandsThemes.private, '123 456'),
-        'private_five': (CaymanIslandsPlates.single, CaymanIslandsThemes.private, '13578'),
-        'disabled': (CaymanIslandsPlates.pair, CaymanIslandsThemes.disabled, '123 456'),
-        'heavy': (CaymanIslandsPlates.pair, CaymanIslandsThemes.heavy, '131 996'),
+        'private': (
+          CaymanIslandsPlates.pair,
+          CaymanIslandsThemes.private,
+          '123 456',
+        ),
+        'private_five': (
+          CaymanIslandsPlates.single,
+          CaymanIslandsThemes.private,
+          '13578',
+        ),
+        'disabled': (
+          CaymanIslandsPlates.pair,
+          CaymanIslandsThemes.disabled,
+          '123 456',
+        ),
+        'heavy': (
+          CaymanIslandsPlates.pair,
+          CaymanIslandsThemes.heavy,
+          '131 996',
+        ),
         'hire': (CaymanIslandsPlates.pair, CaymanIslandsThemes.hire, '108 165'),
         'taxi': (CaymanIslandsPlates.taxi, CaymanIslandsThemes.taxi, '174 159'),
       };
 
-  for (final MapEntry<String, (PlateSpec, PlateTheme, String)> c in cases.entries) {
+  for (final MapEntry<String, (PlateSpec, PlateTheme, String)> c
+      in cases.entries) {
     testWidgets(c.key, (tester) async {
       final (PlateSpec spec, PlateTheme theme, String values) = c.value;
-      final PlateController controller = PlateController.fromValues(spec, values.split(' '));
+      final PlateController controller = PlateController.fromValues(
+        spec,
+        values.split(' '),
+      );
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -60,7 +80,10 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      await expectLater(find.byType(PlateView), matchesGoldenFile('goldens/ky_${c.key}.png'));
+      await expectLater(
+        find.byType(PlateView),
+        matchesGoldenFile('goldens/ky_${c.key}.png'),
+      );
       await tester.pumpWidget(const SizedBox.shrink());
       controller.dispose();
     });

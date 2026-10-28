@@ -9,12 +9,15 @@ class BritishVirginIslandsValidator extends GatedPlateValidator {
   @override
   String get gateGroup => 'serial';
 
-  static const String reasonPrefix = 'The plate starts with a class prefix: two letters, or TAXI.';
+  static const String reasonPrefix =
+      'The plate starts with a class prefix: two letters, or TAXI.';
   static const String reasonSerial = 'The serial has the wrong digit count.';
 
   @override
-  PlateValidation judge(PlateEntry entry) =>
-      validateFields(prefix: entry.group('prefix'), serial: entry.group('serial'));
+  PlateValidation judge(PlateEntry entry) => validateFields(
+    prefix: entry.group('prefix'),
+    serial: entry.group('serial'),
+  );
 
   static int digitsFor(String prefix) => switch (prefix) {
     'PV' => 5,
@@ -22,7 +25,10 @@ class BritishVirginIslandsValidator extends GatedPlateValidator {
     _ => 4,
   };
 
-  static PlateValidation validateFields({required String prefix, required String serial}) {
+  static PlateValidation validateFields({
+    required String prefix,
+    required String serial,
+  }) {
     if (!RegExp(r'^([A-Z]{2}|TAXI)$').hasMatch(prefix)) {
       return const PlateValidation.invalid(reasonPrefix);
     }

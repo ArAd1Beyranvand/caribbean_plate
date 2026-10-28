@@ -32,11 +32,12 @@ abstract final class BritishVirginIslandsThemes {
     framed: true,
   );
 
-  static PlateTheme _theme(Color field, Color ink, {required bool framed}) => PlateTheme.monochrome(
-    field: field,
-    ink: ink,
-    inactive: BritishVirginIslandsColors.inactive,
-    borderWidthRatio: framed ? 0.03 : 0,
-    plateRadiusRatio: 0.05,
-  );
+  static PlateTheme _theme(Color field, Color ink, {required bool framed}) =>
+      PlateTheme.monochrome(
+        field: field,
+        ink: ink,
+        inactive: BritishVirginIslandsColors.inactive,
+        borderWidthRatio: framed ? 0.03 : 0,
+        plateRadiusRatio: 0.05,
+      );
 }

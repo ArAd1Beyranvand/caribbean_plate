@@ -10,7 +10,8 @@ class CollectivityOfSaintMartinValidator extends GatedPlateValidator {
   String get gateGroup => 'letters';
 
   static const String reasonNumber = 'The number is three or four digits.';
-  static const String reasonLetters = 'The letters are two or three (no I, O, U or SS).';
+  static const String reasonLetters =
+      'The letters are two or three (no I, O, U or SS).';
 
   static final RegExp _number = RegExp(r'^\d{3,4}$');
   static final RegExp _letters = RegExp(r'^[A-HJ-NP-TV-Z]{2,3}$');

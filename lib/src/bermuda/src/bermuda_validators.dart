@@ -11,7 +11,8 @@ class BermudaValidator extends GatedPlateValidator {
   static const String reasonSerial = 'The number is five digits.';
 
   @override
-  PlateValidation judge(PlateEntry entry) => isDigitsOfLength(entry.group('serial'), 5)
+  PlateValidation judge(PlateEntry entry) =>
+      isDigitsOfLength(entry.group('serial'), 5)
       ? const PlateValidation.valid()
       : const PlateValidation.invalid(reasonSerial);
 }
@@ -24,7 +25,8 @@ class BermudaPrefixedValidator extends GatedPlateValidator {
   @override
   String get gateGroup => 'serial';
 
-  static const String reasonLetters = 'The class prefix is one to three letters.';
+  static const String reasonLetters =
+      'The class prefix is one to three letters.';
   static const String reasonSerial = 'The number is three or four digits.';
 
   @override

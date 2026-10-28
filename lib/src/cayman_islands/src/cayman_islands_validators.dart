@@ -12,7 +12,8 @@ class CaymanIslandsValidator extends GatedPlateValidator {
 
   @override
   PlateValidation judge(PlateEntry entry) =>
-      isDigitsOfLength(entry.group('first'), 3) && isDigitsOfLength(entry.group('second'), 3)
+      isDigitsOfLength(entry.group('first'), 3) &&
+          isDigitsOfLength(entry.group('second'), 3)
       ? const PlateValidation.valid()
       : const PlateValidation.invalid(reasonDigits);
 }
@@ -27,7 +28,8 @@ class CaymanIslandsSingleValidator extends GatedPlateValidator {
   static const String reasonDigits = 'The serial is five digits.';
 
   @override
-  PlateValidation judge(PlateEntry entry) => isDigitsOfLength(entry.group('serial'), 5)
+  PlateValidation judge(PlateEntry entry) =>
+      isDigitsOfLength(entry.group('serial'), 5)
       ? const PlateValidation.valid()
       : const PlateValidation.invalid(reasonDigits);
 }
